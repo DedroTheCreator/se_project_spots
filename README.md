@@ -4,6 +4,8 @@ An image sharing application/site
 
 ## Description
 
+a web and mobile app that lets people share their photos publicly with the world.
+
 ## Tech Stack
 
 -HTML
