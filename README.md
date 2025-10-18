@@ -14,4 +14,4 @@ An image sharing application/site
 
 This Webpage is deployed to GitHub Pages
 
-- Deyploymepnt link:
+- [Deyploymepnt] link:https://dedrothecreator.github.io/se_project_spots/
