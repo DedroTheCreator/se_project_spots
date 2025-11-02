@@ -52,7 +52,7 @@
   height: 12px;
 }
 
-.profile__add-btn {
+.profile__new-post-btn {
   display: flex;
   margin-left: auto;
   margin-top: auto;
@@ -70,7 +70,7 @@
   align-items: center;
 }
 
-.profile__add-btn:hover {
+.profile__new-post-btn:hover {
   opacity: 90%;
   cursor: pointer;
 }
