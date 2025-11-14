@@ -51,10 +51,18 @@ const newPostCaptionInput = newPostModal.querySelector("#post-caption-input");
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
 editProfileBtn.addEventListener("click", function () {
-  editProfileModal.classList.add("modal_is-opened");
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
