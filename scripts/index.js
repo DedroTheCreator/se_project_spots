@@ -82,7 +82,6 @@ function getCardElement(data) {
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () => {
     cardDeleteBtnEl.closest(".card").remove();
-    cardElement = null;
   });
 
   cardImageEl.addEventListener("click", () => {
@@ -110,27 +109,26 @@ editProfileBtn.addEventListener("click", function () {
   openModal(editProfileModal);
 });
 
-editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+editProfileCloseBtn.addEventListener("click", () =>
+  closeModal(editProfileModal)
+);
+
+newPostBtn.addEventListener("click", () => {
+  openModal(newPostModal);
 });
 
-newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal_is-opened");
+newPostCloseBtn.addEventListener("click", () => {
+  closeModal(newPostModal);
 });
 
-newPostCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal_is-opened");
-});
-
-previewCloseBtn.addEventListener("click", function () {
-  closeModal(previewModal);
-});
+newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
+previewCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
 function handleProfileFormsSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 }
 
 function handleAddCardSubmit(evt) {

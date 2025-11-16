@@ -37,7 +37,11 @@
 .profile__edit-btn {
   margin-top: auto;
   background-color: transparent;
-  border: transparent;
+  border: none;
+  margin-top: 100px; /* adjust as needed */
+  align-self: flex-start; /* ensures it stays on the left */
+  background-color: transparent;
+  border: none;
 }
 
 .profile__edit-btn:hover {
@@ -61,7 +65,7 @@
   border-radius: 8px;
   background-color: #212121;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 16px;
   line-height: 100%;
   color: #fcf5e5;
