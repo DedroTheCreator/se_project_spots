@@ -16,6 +16,10 @@
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
+.modal_type_preview {
+  padding: 0 16px;
+}
+
 .modal_is-opened {
   opacity: 1;
   visibility: visible;
@@ -39,15 +43,26 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  opacity: 30%;
-  background-color: #fff;
+  background-image: url("../images/Close%20button.svg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   border: none;
+  cursor: pointer;
+  filter: brightness(1000%) saturate(0%);
+  opacity: 1;
+  transition: filter 0.2s ease, opacity 0.2s ease;
 }
 
 .modal__close-btn:hover {
-  opacity: 20%;
-  cursor: pointer;
-  transform: scale(1.15);
+  filter: brightness(70%) saturate(0%);
+  opacity: 0.9;
+}
+
+.modal__close-btn_type_preview {
+  top: 0;
+  right: -52.5px;
 }
 
 .modal__title {
@@ -100,4 +115,84 @@
 .modal__submit-btn:hover {
   opacity: 90%;
   cursor: pointer;
+}
+
+.modal__image-container {
+  position: relative;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  font-family: Poppins;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #fff;
+  background-color: #212121;
+  display: inline-block;
+  width: 214;
+  height: 32;
+  top: 750px;
+  left: 223px;
+  opacity: 1;
+  border-radius: 8px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+}
+
+@media screen and (max-width: 627px) {
+  .modal__close-btn_type_preview {
+    top: -48px;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal__container {
+    padding: 22px 12px 12px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__close-btn {
+    top: 22px;
+    right: 12px;
+  }
+
+  .modal__form {
+    margin-top: 34px;
+  }
+
+  .modal__input {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .modal__close-btn {
+    max-width: none;
+  }
+
+  @media screen and (max-width: 627px) {
+    .modal__close-btn_type_preview {
+      top: -48px;
+      right: 0;
+    }
+
+    .modal__image {
+      max-width: unset;
+    }
+  }
 }
