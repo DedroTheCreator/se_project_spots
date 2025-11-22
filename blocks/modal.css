@@ -6,7 +6,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   padding: 10%;
@@ -24,6 +24,7 @@
 }
 
 .modal_is-opened {
+  display: flex;
   opacity: 1;
   visibility: visible;
   transform: scale(1);
@@ -85,6 +86,20 @@
 
 .modal__label {
   margin: 0 0 32px;
+  display: block;
+}
+
+.modal__error {
+  display: block;
+  margin-top: 8px;
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 14px;
+}
+
+.modal__error_visible {
+  display: block;
 }
 
 .modal__input {
@@ -96,6 +111,17 @@
   padding-right: 12px;
   padding-bottom: 16px;
   border-radius: 5px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal__input_type_error {
+  border: 2px solid #ff4d4d; /* red border */
+  outline: none;
+}
+
+.modal__input_type_error:hover {
+  box-shadow: 0 0 6px rgba(255, 50, 50, 0.8);
+  border-color: #ff1f1f;
 }
 
 .modal__input::placeholder {
@@ -124,6 +150,11 @@
 .modal__submit-btn:hover {
   opacity: 90%;
   cursor: pointer;
+}
+
+.modal__submit-btn_disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .modal__image-container {

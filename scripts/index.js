@@ -106,6 +106,9 @@ function closeModal(modal) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+
+  resetFormValidation(editProfileFormEl, settings);
+
   openModal(editProfileModal);
 });
 
@@ -114,6 +117,9 @@ editProfileCloseBtn.addEventListener("click", () =>
 );
 
 newPostBtn.addEventListener("click", () => {
+  newPostFormEl.reset();
+  resetFormValidation(newPostFormEl, settings);
+
   openModal(newPostModal);
 });
 
@@ -121,7 +127,6 @@ newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
 });
 
-newPostCloseBtn.addEventListener("click", () => closeModal(newPostModal));
 previewCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
 function handleProfileFormsSubmit(evt) {
@@ -143,6 +148,13 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(newCardElement);
 
   newPostFormEl.reset();
+
+  toggleButtonState(
+    Array.from(newPostFormEl.querySelectorAll(settings.inputSelector)),
+    newPostFormEl.querySelector(settings.submitButtonSelector),
+    settings
+  );
+
   closeModal(newPostModal);
 }
 
