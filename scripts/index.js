@@ -117,14 +117,29 @@ editProfileCloseBtn.addEventListener("click", () =>
 );
 
 newPostBtn.addEventListener("click", () => {
-  newPostFormEl.reset();
-  resetFormValidation(newPostFormEl, settings);
-
   openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
+});
+
+editProfileModal.addEventListener("click", (evt) => {
+  if (evt.target === editProfileModal) {
+    closeModal(editProfileModal);
+  }
+});
+
+newPostModal.addEventListener("click", (evt) => {
+  if (evt.target === newPostModal) {
+    closeModal(newPostModal);
+  }
+});
+
+previewModal.addEventListener("click", (evt) => {
+  if (evt.target === previewModal) {
+    closeModal(previewModal);
+  }
 });
 
 previewCloseBtn.addEventListener("click", () => closeModal(previewModal));

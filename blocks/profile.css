@@ -46,7 +46,7 @@
 
 .profile__edit-btn:hover {
   background-color: transparent;
-  opacity: 60%;
+  opacity: 0.6;
   cursor: pointer;
 }
 
